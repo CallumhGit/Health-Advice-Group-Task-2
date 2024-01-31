@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap');
+
+@import url('styles.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+
+
+/* styling of hte navigation bar*/
+
+header {
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 1.75rem 0px;
+  }
+
+
+  #color-effect {
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .logo {
+    margin-left: 2%;
+  }
+  
+  .nav-links {
+    position: relative;
+  
+  }
+  
+  .nav-links ul {
+    position: relative;
+    display: flex;
+  }
+  
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+
+  .nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  
+  .nav-links ul li:hover::after {
+    width: 100%;
+  
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  header .fa {
+    display: none;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+   
+  }
+
+  .buttons a{
+    padding-right: 1.5rem;
+  }
+  
