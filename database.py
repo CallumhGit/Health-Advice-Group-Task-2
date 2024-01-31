@@ -5,4 +5,4 @@ from flask_sqlalchemy import SQLAlchemy
 sqlite = "sqlite:///database.db"
 
 # Create an instance of the SQLAlchemy class
-db = SQLAlchemy
+db = SQLAlchemy()
