@@ -1,35 +1,35 @@
 <header>
-    <div class="logo">
-      <a href="/" id="color-effect"><i class="fa-solid fa-house-medical"></i>The Health Advice Group</a>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <i class="fa fa-times" onclick="hideMenu()"></i>
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">About Us</a></li>
-        <li><a href="">Accounts</a></li>
-      </ul>
-    </div>
-    <i class="fa fa-bars" onclick='showMenu()'></i>
-    </div>
-    <div class="buttons">
-      <a href="{{url_for('login')}}"><i class="fa-solid fa-user" id="color-effect"></i>Sign In</a>
-  
-      <a href="{{url_for('register')}}">Register</a>
-    </div>
-    </div>
-  </header>
-  
-  
-  <script>
-  
-    var navLinks = document.getElementById('navLinks');
-  
-    function showMenu() {
-      navLinks.style.right = "0";
-    }
-  
-    function hideMenu() {
-      navLinks.style.right = '-200px';
-    }
-  </script>
+  <div class="logo">
+    <a href="/" id="color-effect"><i class="fa-solid fa-house-medical"></i>The Health Advice Group</a>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <i class="fa fa-times" onclick="hideMenu()"></i>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="">About Us</a></li>
+      <li><a href="">Accounts</a></li>
+    </ul>
+  </div>
+  <i class="fa fa-bars" onclick='showMenu()'></i>
+  </div>
+  <div class="buttons">
+    <a href="{{url_for('login')}}"><i class="fa-solid fa-user" id="color-effect"></i>Sign In</a>
+
+    <a href="{{url_for('register')}}">Register</a>
+  </div>
+  </div>
+</header>
+
+
+<script>
+
+  var navLinks = document.getElementById('navLinks');
+
+  function showMenu() {
+    navLinks.style.right = "0";
+  }
+
+  function hideMenu() {
+    navLinks.style.right = '-200px';
+  }
+</script>

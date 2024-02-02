@@ -88,7 +88,9 @@ def register():
   
   return render_template("register.html", form=form)
 
-
+@app.route("/weather")
+def weather():
+   return render_template("weatherPage.html")
 
 if   __name__ == "__main__":
   app.run(debug= True)
