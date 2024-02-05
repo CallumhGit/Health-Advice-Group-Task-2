@@ -1,3 +1,4 @@
+<!-- This is the main navigation that is found throughout all the pages on the site-->
 <header>
   <div class="logo">
     <a href="/" id="color-effect"><i class="fa-solid fa-house-medical"></i>The Health Advice Group</a>
@@ -10,25 +11,26 @@
       <li><a href="">Accounts</a></li>
     </ul>
   </div>
-  <i class="fa fa-bars" onclick='showMenu()'></i>
   </div>
   <div class="buttons">
     <a href="{{url_for('login')}}"><i class="fa-solid fa-user" id="color-effect"></i>Sign In</a>
 
     <a href="{{url_for('register')}}">Register</a>
   </div>
+  <i class="fa fa-bars" onclick='showMenu()'></i>
   </div>
 </header>
 
 
 <script>
-
+  // Get the navigation links element
   var navLinks = document.getElementById('navLinks');
-
+// Function to show the navigation links
   function showMenu() {
     navLinks.style.right = "0";
   }
 
+  // Function to hide the navigation links
   function hideMenu() {
     navLinks.style.right = '-200px';
   }

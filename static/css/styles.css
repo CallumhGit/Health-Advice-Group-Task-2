@@ -1,3 +1,5 @@
+/* This file is used to create a root for all the colours that are used in this project, saves us 
+from having to type out the colour vales everytime*/
 :root {
     --background-color: #f5f8f8;
     --text-color: #081517;

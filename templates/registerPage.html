@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title_extension %} - Register{% endblock %}
+{% block preface_body %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+
+<div class="form-container">
+  <form action="" method="post">
+    <h2 class="form-title">Register</h2>
+
+    <div>{{ form.hidden_tag() }}</div>
+
+    <div class="username_field">{{ form.username }}</div>
+
+    <div class="password_field">{{ form.password }}</div>
+
+    <div class="password_field">{{ form.confirm }}</div>
+    <div class="submit_button">{{ form.submit }}</div>
+
+  </form>
+</div>
+
+<div class="error">
+
+  {% if form.errors %}
+
+  {% for field, errors in form.errors.items() %}
+
+  {% for error in errors %}
+
+  {{ error }}
+
+  {% endfor %}
+
+  {% endfor %}
+
+  {% endif %}
+
+</div>
+
+
+{% endblock %}

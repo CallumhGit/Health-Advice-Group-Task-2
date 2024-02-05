@@ -46,7 +46,7 @@ def load_user(user_id):
 def index():
     return render_template("index.html")
 
-
+# Defines the route for the login function
 @app.route("/login", methods = ["GET", "POST"])
 def login():
   form = LoginForm()
@@ -60,9 +60,9 @@ def login():
       return redirect(url_for("dashboard"))
     
     else: 
-      return render_template("login.html", form= form)
+      return render_template("loginPage.html", form= form)
     
-  return render_template("login.html", form = form)
+  return render_template("loginPage.html", form = form)
 
 
 @app.route("/logout")
@@ -86,11 +86,13 @@ def register():
 
     return  redirect(url_for("login"))
   
-  return render_template("register.html", form=form)
+  return render_template("registerPage.html", form=form)
 
+# Route added for the weather page
 @app.route("/weather")
 def weather():
    return render_template("weatherPage.html")
+
 
 if   __name__ == "__main__":
   app.run(debug= True)

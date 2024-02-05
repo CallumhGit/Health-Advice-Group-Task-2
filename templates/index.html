@@ -4,4 +4,85 @@
 {% include 'header.html' %}
 {% endblock %}
 {% block content %}
+
+<!--- This is the code for the main headings on the home page-->
+<section class="welcomeLanding">
+    <div class="headings">
+        <h1 class="mainHeading">Healthy Living: Your Guide to Optimal Wellness</h1>
+        <h2 class="subHeading">Empowering you with expert advice for a vibrant and balanced life</h2>
+    </div>
+</section>
+
+<!---This is the about us section of the home page, this section cotains information in relation to the company-->
+<section class="aboutUs">
+    <div class="row">
+        <div class="col-1">
+            <img src="/static/images/healthcareStaff.jpg" alt="Image of Health Care professionals">
+        </div>
+        <div class="col-2">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit officia sequi fugit commodi consequatur. Exercitationem ut placeat vitae. Eaque quis nobis dignissimos repellendus recusandae totam iste at eligendi saepe nemo!
+            Dolor suscipit accusamus dolore fugiat perspiciatis architecto consequatur aperiam consectetur quae reiciendis. Ullam, alias esse! Deleniti libero, ipsum commodi minus facilis quisquam doloribus eveniet harum minima illo ab fuga quidem.
+            Nisi doloribus nulla sequi architecto ut omnis modi rem ipsam totam officiis? Minus, commodi! Aut labore quo quas officia nihil harum at recusandae, repellendus quis ipsum fuga perspiciatis eaque voluptatem.</p>
+        </div>
+    </div>
+</section>
+
+<!---This is the testimonials section, this is where we can display client reviews, this is part of the about us section just seperated for ease of design-->
+<section class='testimonials'>
+    <h1>What Our Clients's Say About Us</h1>
+    <div class="row">
+      <div class="testimonial-col">
+        <img src="/static/images/user1.jpg">
+        <div>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas facilis cum, numquam hic totam, praesentium
+            tenetur, dolorum recusandae iusto impedit tempore alias. Error, sed placeat aliquam vero esse natus
+            deserunt!</p>
+          <h3>Christine Berkley</h3>
+          <div class='star'>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-col">
+        <img src="/static/images/user2.jpg">
+        <div>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas facilis cum, numquam hic totam, praesentium
+            tenetur, dolorum recusandae iusto impedit tempore alias. Error, sed placeat aliquam vero esse natus
+            deserunt!</p>
+          <h3>David Benson</h3>
+          <div class="star">
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+            <i class='fa fa-star'></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---This is the accounts section of the page, this will show the benefits of creating an acount with us-->
+  </section>
+
+  <section class="accounts">
+    <div class="row">
+        <div class="col-1">
+            <img src="" alt="">
+        </div>
+        <div class="col-2">
+            <p></p>
+        </div>
+    </div>
+    <p>filler text</p>
+</section>
+
+<!---This is jinja syntax, this extends the footer from the template called footer.html-->
+<section>
+{% include 'footer.html' %}
+</section>
+
 {% endblock %}
