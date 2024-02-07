@@ -5,30 +5,32 @@
 {% endblock %}
 {% block content %}
 
+  <div class="container">
+    <div class="form-container">
+      <form action="" method="post">
+        <h2 class="form-title">Sign In</h2>
 
+        <div>{{ form.hidden_tag() }}</div>
 
-<div class="form-container">
-  <form action="" method="post">
-    <h2 class="form-title">Sign In</h2>
+        <div class="username-field">{{ form.username }}</div>
 
-    <div>{{ form.hidden_tag() }}</div>
+        <div class="password-field">{{ form.password }}</div>
 
-    <div class="username-field">{{ form.username }}</div>
-
-    <div class="password-field">{{ form.password }}</div>
-
-    <div class="password-field">{{ form.confirm }}</div>
-    <div class="submit-button">{{ form.submit }}</div>
-  </form>
-</div>
-<div class="error">
-  {% if form.errors %}
-  {% for field, errors in form.errors.items() %}
-  {% for error in errors %}
-  {{ error }}
-  {% endfor %}
-  {% endfor %}
-  {% endif %}
-</div>
-
+        <div class="password-field">{{ form.confirm }}</div>
+        <div class="submit-button">{{ form.submit }}</div>
+      </form>
+    </div>
+    <div class="error">
+      {% if form.errors %}
+      {% for field, errors in form.errors.items() %}
+      {% for error in errors %}
+      {{ error }}
+      {% endfor %}
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
+{% block postface_body %}
+{% include 'footer.html'%}
 {% endblock %}

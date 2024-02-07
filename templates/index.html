@@ -68,21 +68,14 @@
     <!---This is the accounts section of the page, this will show the benefits of creating an acount with us-->
   </section>
 
-  <section class="accounts">
-    <div class="row">
-        <div class="col-1">
-            <img src="" alt="">
-        </div>
-        <div class="col-2">
-            <p></p>
-        </div>
-    </div>
-    <p>filler text</p>
-</section>
+  <!---This is the testimonials section, this is where we can display client reviews, this is part of the about us section just seperated for ease of design-->
+
+
+  <!---This is the accounts section of the page, this will show the benefits of creating an acount with us-->
+
 
 <!---This is jinja syntax, this extends the footer from the template called footer.html-->
-<section>
-{% include 'footer.html' %}
-</section>
-
+{% endblock %}
+{% block postface_body %}
+{% include 'footer.html'%}
 {% endblock %}
