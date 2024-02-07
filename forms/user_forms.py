@@ -1,6 +1,6 @@
 #Importing the modules that will be used throughout this project
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import InputRequired, Length, ValidationError, EqualTo
 from models.user import User
 from extension import argon2
@@ -32,11 +32,14 @@ class LoginForm(FlaskForm):
 
     password = PasswordField(validators=[InputRequired()], render_kw={"placeholder": "password"})
 
+    remember = BooleanField("Remember Me")
+
     def validate_username(self, username):
         existing_user_username = User.query.filter_by(username = username.data).first()
 
         if existing_user_username is None or not argon2.check_password_hash(existing_user_username.password, str(self.password.data)):
             raise ValidationError ("Username or password is incorrect, please try again")
+    
         
     submit = SubmitField("submit")
 

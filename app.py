@@ -55,7 +55,7 @@ def login():
     user = User.query.filter_by(username = form.username.data).first()
 
     if user and argon2.check_password_hash(user.password, form.password.data):
-      login_user(user)
+      login_user(user, remember=form.remember.data)
 
       return redirect(url_for("dashboard"))
     
