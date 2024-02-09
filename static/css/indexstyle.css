@@ -216,6 +216,7 @@ header .fa {
   text-align: center;
   justify-content: center;
   font-size: 0.9rem;
+  margin-right: 1rem;
 }
 
 .about-col-1 img{
@@ -241,8 +242,9 @@ header .fa {
   text-align: center;
 }
 
-.testimonials h1{
+.testimonials h2{
   padding-bottom:.9375rem ;
+  text-decoration: underline;
 }
 
 .testimonial-col {
@@ -298,12 +300,36 @@ header .fa {
 /*---- Accounts Section --------*/
 
 .slideshow-container {
+  display: flex;
+  left: 25%;
   width: 600px;
   position: relative;
   margin-right: auto;
-
+  padding-bottom: 40px;
+  
 }
 
+.account-heading{
+  padding-bottom: 1rem;
+  text-decoration: underline;
+}
+
+
+.account-col {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 44%;
+  position: relative;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.accountText{
+  font-size: 12px;
+  text-align: center;
+  padding-left: 3rem;
+  margin-right: 1rem;
+}
 
 
 
@@ -334,20 +360,15 @@ header .fa {
   to {opacity: 1}
 }
 
-.account-col{
-  display: flex;
-  flex-basis: 44%;
-}
-
-.accountText{
-  max-width: 400px;
-}
-
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
 
+.mySlides img{
+  border-style: solid;
+  border-color: var(--accent-color);
+}
 
 
 
