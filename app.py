@@ -49,6 +49,8 @@ def index():
 # Defines the route for the login function
 @app.route("/login", methods = ["GET", "POST"])
 def login():
+  if current_user.is_authenticated:
+    return redirect (url_for("weather"))
   form = LoginForm()
 
   if form.validate_on_submit():
@@ -57,7 +59,7 @@ def login():
     if user and argon2.check_password_hash(user.password, form.password.data):
       login_user(user, remember=form.remember.data)
 
-      return redirect(url_for("dashboard"))
+      return redirect(url_for("weather"))
     
     else: 
       return render_template("loginPage.html", form= form)
@@ -74,6 +76,8 @@ def logout():
 
 @app.route("/register", methods= ["GET", "POST"])
 def register():
+  if current_user.is_authenticated:
+     return redirect (url_for("weather"))
   form = RegisterForm()
 
   if form.validate_on_submit():
@@ -93,6 +97,15 @@ def register():
 def weather():
    return render_template("weatherPage.html")
 
+@app.route("/health")
+@login_required
+def health():
+   return render_template("healthConditions.html")
+
+@app.route("/advice")
+@login_required
+def advice():
+   return render_template("advicePage.html")
 
 if   __name__ == "__main__":
   app.run(debug= True)

@@ -4,7 +4,7 @@ from having to type out the colour vales everytime*/
     --background-color: #f5f8f8;
     --text-color: #081517;
     --primary-color: #67939E;
-    --secondary-color: #A495DA;
+    --secondary-color: #a495da;
     --accent-color: #AF69DF;
     --color-effect: linear-gradient(120deg, var(--primary-color), var(--accent-color))
 }

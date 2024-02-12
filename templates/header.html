@@ -6,17 +6,33 @@
   <div class="nav-links" id="navLinks">
     <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
+      {% if current_user.is_authenticated %}
+      <li><a href="{{url_for('weather')}}">Weather</a></li>
+      <li><a href="{{url_for('advice')}}">Advice</a></li>
+      <li><a href="{{url_for('health')}}">Health Conditions</a></li>
+      {% else %}
       <li><a href="/">Home</a></li>
-      <li><a href="">About Us</a></li>
-      <li><a href="">Accounts</a></li>
+      <li><a href="#jump-about">About Us</a></li>
+      <li><a href="#jump-account">Accounts</a></li>
+      {% endif %}
     </ul>
   </div>
   </div>
   <div class="buttons">
+    {% if current_user.is_authenticated %}
+    <!----<a id="logoutDropdown" onclick="logoutDropFunction()"></i>{{ current_user.username}}</a> ---> 
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn"><i class="fa-solid fa-user" id="color-effect"></i>{{ current_user.username}}</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="{{url_for('logout')}}">Logout</a>
+      </div>
+    </div>  
+    {% else %}
     <a href="{{url_for('login')}}"><i class="fa-solid fa-user" id="color-effect"></i>Sign In</a>
 
     <a href="{{url_for('register')}}">Register</a>
   </div>
+  {% endif %}
   <i class="fa fa-bars" onclick='showMenu()'></i>
   </div>
 </header>
@@ -35,3 +51,26 @@
     navLinks.style.right = '-200px';
   }
 </script>
+
+
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
