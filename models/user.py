@@ -19,6 +19,8 @@ class User(db.Model, UserMixin):
 
     usergroup = db.Column(db.SmallInteger, nullable = False, default = 0)
 
+    conditions = db.relationship('HealthCondition', backref='user', lazy=True)
+
     # Defines a method to get the user ID
     def get_id(self):
         return self.uid

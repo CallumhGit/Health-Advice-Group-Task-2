@@ -1,0 +1,26 @@
+
+{% block preface_body %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block content %}
+    <h1>Health Conditions</h1>
+
+    <form method="POST" action="{{ url_for('add_health_condition') }}">
+        {{ form.hidden_tag() }}
+
+        <label for="conditionName">Condition Name:</label>
+        {{ form.conditionName(class="form-control", placeholder="Enter the condition name") }}
+        {% for error in form.conditionName.errors %}
+            <p class="text-danger">{{ error }}</p>
+        {% endfor %}
+
+        <label for="description">Description:</label>
+        {{ form.description(class="form-control", placeholder="Enter a description") }}
+        {% for error in form.description.errors %}
+            <p class="text-danger">{{ error }}</p>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Add Condition</button>
+    </form>
+{% endblock %}

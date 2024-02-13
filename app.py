@@ -3,8 +3,10 @@ from flask import Flask, render_template, redirect, url_for
 from database import db, sqlite
 from extension import argon2 
 from forms.user_forms import RegisterForm, LoginForm
+from forms.health_form import HealthConditionForm
 from flask_login import login_user, LoginManager, login_required, current_user, logout_user
 from models.user import User
+from models.health import HealthCondition 
 from sqlalchemy import text
 
 # Import the Flask module and create an instance of the Flask application
@@ -32,7 +34,7 @@ with app.app_context():
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Set the login view for the application
+# Set the login view for the applicati on
 login_manager.login_view = "Login"
 
 
@@ -106,6 +108,31 @@ def health():
 @login_required
 def advice():
    return render_template("advicePage.html")
+
+@app.route('/success_page')
+def success_page():
+    return render_template('success_page.html')
+
+@app.route('/add_health_condition', methods=['GET', 'POST'])
+@login_required
+def add_health_condition():
+    form = HealthConditionForm()
+
+    if form.validate_on_submit():
+        user_id =  current_user.uid() 
+
+        new_condition = HealthCondition(
+            uid=user_id,
+            conditionName=form.conditionName.data,
+            description=form.description.data
+        )
+
+        db.session.add(new_condition)
+        db.session.commit()
+
+        return redirect(url_for('success_page')) 
+
+    return render_template('healthConditions.html', form=form)
 
 if   __name__ == "__main__":
   app.run(debug= True)
